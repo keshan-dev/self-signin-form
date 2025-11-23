@@ -24,6 +24,7 @@ public class UserService {
             userModel.setId(userEntity.getId());
             userModel.setName(userEntity.getName());
             userModel.setEmail(userEntity.getEmail());
+            userModel.setAddress(userEntity.getAddress());
 
             userModels.add(userModel);
 

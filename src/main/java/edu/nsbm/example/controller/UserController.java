@@ -2,7 +2,6 @@ package edu.nsbm.example.controller;
 
 import edu.nsbm.example.model.UserModel;
 import edu.nsbm.example.service.UserService;
-import org.apache.catalina.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
