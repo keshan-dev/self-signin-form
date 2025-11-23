@@ -31,10 +31,11 @@ public class UserService {
         return userModels;
     }
 
-    public UserModel saveUser(String name,String email){
+    public UserModel saveUser(String name,String email,String address){
         UserEntity userEntity = new UserEntity();
         userEntity.setName(name);
         userEntity.setEmail(email);
+        userEntity.setAddress(address);
 
         UserEntity savedUser = userRepository.save(userEntity);
 
@@ -42,6 +43,7 @@ public class UserService {
         userModel.setId(savedUser.getId());
         userModel.setName(savedUser.getName());
         userModel.setEmail(savedUser.getEmail());
+        userModel.setAddress(savedUser.getAddress());
 
         return userModel;
 

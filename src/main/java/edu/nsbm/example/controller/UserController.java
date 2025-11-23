@@ -22,7 +22,7 @@ public class UserController {
 
     @PostMapping("/save-user")
     UserModel saveUser(@RequestBody UserModel user){
-        return userService.saveUser(user.getName(),user.getEmail());
+        return userService.saveUser(user.getName(),user.getEmail(),user.getAddress());
     }
 
 }
