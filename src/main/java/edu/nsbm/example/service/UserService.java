@@ -3,7 +3,6 @@ package edu.nsbm.example.service;
 import edu.nsbm.example.entity.UserEntity;
 import edu.nsbm.example.model.UserModel;
 import edu.nsbm.example.repository.UserRepository;
-import org.apache.catalina.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -32,12 +31,19 @@ public class UserService {
         return userModels;
     }
 
-    public UserEntity saveUser(String name,String email){
-        UserEntity user = new UserEntity();
-        user.setName(name);
-        user.setEmail(email);
+    public UserModel saveUser(String name,String email){
+        UserEntity userEntity = new UserEntity();
+        userEntity.setName(name);
+        userEntity.setEmail(email);
 
-        return userRepository.save(user);
+        UserEntity savedUser = userRepository.save(userEntity);
+
+        UserModel userModel = new UserModel();
+        userModel.setId(savedUser.getId());
+        userModel.setName(savedUser.getName());
+        userModel.setEmail(savedUser.getEmail());
+
+        return userModel;
 
     }
 }
